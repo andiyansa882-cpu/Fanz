@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment - Karlina</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        body {
+            overflow-x: hidden;
+            color: white;
+        }
+        
+        #video-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: -1;
+            object-fit: cover;
+        }
+        
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 0;
+        }
+        
+        .container {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .header {
+            margin-bottom: 40px;
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .payment-methods {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+        
+        .payment-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            transition: transform 0.3s ease;
+        }
+        
+        .payment-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .payment-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: #ffdd40;
+        }
+        
+        .payment-info {
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+        }
+        
+        .number {
+            font-weight: bold;
+            font-size: 1.3rem;
+            letter-spacing: 1px;
+            margin: 15px 0;
+            color: #4cd964;
+        }
+        
+        .name {
+            font-style: italic;
+        }
+        
+        .qris-section {
+            margin-top: 30px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+        }
+        
+        .qris-section h2 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: #ffdd40;
+        }
+        
+        .qris-image {
+            max-width: 300px;
+            border-radius: 10px;
+            margin: 0 auto;
+            display: block;
+            border: 3px solid white;
+        }
+        
+        .channel {
+            margin-top: 50px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+        }
+        
+        .channel h2 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: #ffdd40;
+        }
+        
+        .channel a {
+            display: inline-block;
+            background: #25D366;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-top: 15px;
+            transition: all 0.3s ease;
+        }
+        
+        .channel a:hover {
+            background: #128C7E;
+            transform: scale(1.05);
+        }
+        
+        @media (max-width: 768px) {
+            .payment-methods {
+                grid-template-columns: 1fr;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .payment-card {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <video id="video-background" autoplay muted loop>
+        <source src="https://files.catbox.moe/3bhw75.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    
+    <div class="overlay"></div>
+    
+    <div class="container">
+        <div class="header">
+            <h1>Payment Methods</h1>
+            <p>Silakan melakukan pembayaran melalui metode di bawah ini</p>
+        </div>
+        
+        <div class="payment-methods">
+            <div class="payment-card">
+                <h3>DANA</h3>
+                <div class="number">083829926817</div>
+                <div class="payment-info">A/N: <span class="name">KARLINA</span></div>
+            </div>
+            
+            <div class="payment-card">
+                <h3>GOPAY</h3>
+                <div class="number">083829926817</div>
+                <div class="payment-info">A/N: <span class="name">KARLINA</span></div>
+            </div>
+            
+            <div class="payment-card">
+                <h3>OVO</h3>
+                <div class="number">083829926817</div>
+                <div class="payment-info">A/N: <span class="name">KARLINA</span></div>
+            </div>
+        </div>
+        
+        <div class="qris-section">
+            <h2>QRIS</h2>
+            <img src="https://files.catbox.moe/wsq3mc.jpg" alt="QRIS Payment" class="qris-image">
+        </div>
+        
+        <div class="channel">
+            <h2>Jangan Lupa Ikuti Saluran Saya</h2>
+            <a href="https://whatsapp.com/channel/0029VbAKUAhDzgT3gEKU4F1o" target="_blank">WhatsApp Channel</a>
+        </div>
+    </div>
+
+    <script>
+        // Script untuk memastikan video background berjalan dengan baik
+        document.addEventListener('DOMContentLoaded', function() {
+            const video = document.getElementById('video-background');
+            video.play();
+        });
+    </script>
+</body>
+</html>
